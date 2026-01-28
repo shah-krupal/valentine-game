@@ -1,0 +1,820 @@
+/* Additional App-specific styles */
+
+.App {
+  width: 100%;
+  height: 100vh;
+}
+
+/* Special Header */
+.special-header {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+  color: var(--accent-purple);
+  margin-bottom: 15px;
+  opacity: 0.9;
+  animation: shimmerText 3s ease-in-out infinite;
+}
+
+.special-header span {
+  display: inline-block;
+  animation: sparkleRotate 2s ease-in-out infinite;
+}
+
+@keyframes shimmerText {
+
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes sparkleRotate {
+
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(15deg) scale(1.2);
+  }
+}
+
+/* Time Badge */
+.time-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, rgba(255, 107, 157, 0.2) 0%, rgba(199, 125, 255, 0.2) 100%);
+  padding: 8px 20px;
+  border-radius: 30px;
+  margin-bottom: 25px;
+  border: 2px solid rgba(255, 107, 157, 0.3);
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+.badge-heart {
+  animation: heartPop 1s ease-in-out infinite;
+}
+
+.badge-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--secondary-pink);
+  letter-spacing: 0.5px;
+}
+
+@keyframes badgePulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 107, 157, 0.3);
+  }
+
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
+  }
+}
+
+@keyframes heartPop {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Photo transition */
+.photo-container img {
+  animation: photoSwitch 0.5s ease-out;
+}
+
+@keyframes photoSwitch {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-5deg);
+  }
+
+  50% {
+    transform: scale(1.05) rotate(2deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Button hover effects */
+.btn-yes:hover::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+
+/* No button wiggle when stage increases */
+.btn-no.running {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+@keyframes wiggle {
+
+  0%,
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateX(-10px) rotate(-5deg);
+  }
+
+  50% {
+    transform: translateX(10px) rotate(5deg);
+  }
+
+  75% {
+    transform: translateX(-5px) rotate(-2deg);
+  }
+}
+
+/* Journey Container */
+.journey-container {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 2px solid rgba(255, 107, 157, 0.2);
+  animation: journeyFadeIn 1s ease-out;
+}
+
+@keyframes journeyFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.journey-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  color: var(--secondary-pink);
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 2px rgba(255, 77, 109, 0.2);
+}
+
+.journey-timeline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.journey-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(255, 107, 157, 0.15) 0%, rgba(199, 125, 255, 0.15) 100%);
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 107, 157, 0.2);
+  opacity: 0;
+  animation: itemPopIn 0.5s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.journey-item:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(255, 107, 157, 0.3);
+  background: linear-gradient(135deg, rgba(255, 107, 157, 0.25) 0%, rgba(199, 125, 255, 0.25) 100%);
+}
+
+@keyframes itemPopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(20px);
+  }
+
+  60% {
+    transform: scale(1.1) translateY(-5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.journey-emoji {
+  font-size: 1.4rem;
+  animation: journeyEmojiPulse 2s ease-in-out infinite;
+}
+
+@keyframes journeyEmojiPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.journey-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #555;
+}
+
+/* Love Note */
+.love-note {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 245, 247, 0.9) 100%);
+  padding: 25px 30px;
+  border-radius: 20px;
+  margin-top: 20px;
+  border: 2px solid rgba(255, 107, 157, 0.3);
+  box-shadow:
+    0 10px 30px rgba(255, 107, 157, 0.2),
+    inset 0 0 30px rgba(255, 255, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.love-note::before {
+  content: '💌';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  animation: letterFloat 2s ease-in-out infinite;
+}
+
+@keyframes letterFloat {
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+.love-note p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  font-style: italic;
+  margin: 0;
+  padding-top: 15px;
+}
+
+.love-note strong {
+  color: var(--secondary-pink);
+  font-size: 1.2rem;
+}
+
+/* Highlight text */
+.highlight-text {
+  background: linear-gradient(135deg, var(--primary-pink), var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* Final hearts animation */
+.final-hearts {
+  margin-top: 20px;
+  animation: finalHeartsBounce 1s ease-in-out infinite;
+}
+
+@keyframes finalHeartsBounce {
+
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  25% {
+    transform: scale(1.1) rotate(-5deg);
+  }
+
+  50% {
+    transform: scale(1.2) rotate(0deg);
+  }
+
+  75% {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+/* Extra love particles around success */
+.success-screen::before,
+.success-screen::after {
+  content: '💕';
+  position: absolute;
+  font-size: 3rem;
+  animation: floatAround 4s ease-in-out infinite;
+}
+
+.success-screen::before {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.success-screen::after {
+  top: 30%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+@keyframes floatAround {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: translateY(-30px) rotate(15deg);
+    opacity: 1;
+  }
+}
+
+/* Make success content scrollable for journey */
+.success-content {
+  max-height: 90vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-pink) rgba(255, 255, 255, 0.3);
+}
+
+.success-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.success-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.success-content::-webkit-scrollbar-thumb {
+  background: var(--primary-pink);
+  border-radius: 10px;
+}
+
+/* Stage transition */
+.card {
+  transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .journey-timeline {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .journey-item {
+    width: 80%;
+    justify-content: center;
+  }
+
+  .love-note {
+    padding: 20px 15px;
+  }
+
+  .love-note p {
+    font-size: 1rem;
+  }
+
+  .journey-title {
+    font-size: 1.6rem;
+  }
+
+  .special-header {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .question-text {
+    font-size: 1.8rem !important;
+  }
+
+  .sub-message {
+    font-size: 0.95rem;
+  }
+
+  .btn-yes {
+    padding: 12px 30px !important;
+    font-size: 1.1rem !important;
+  }
+
+  .success-title {
+    font-size: 2rem !important;
+  }
+
+  .success-message {
+    font-size: 1rem;
+  }
+
+  .success-photo {
+    width: 180px;
+    height: 180px;
+  }
+
+  .time-badge {
+    padding: 6px 15px;
+  }
+
+  .badge-text {
+    font-size: 0.85rem;
+  }
+}
+
+/* ============================================ */
+/* JOURNEY PHOTO MODAL STYLES */
+/* ============================================ */
+
+/* Journey subtitle hint */
+.journey-subtitle {
+  font-size: 0.95rem;
+  color: #888;
+  margin-bottom: 20px;
+  animation: subtitlePulse 2s ease-in-out infinite;
+}
+
+@keyframes subtitlePulse {
+
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Clickable journey items */
+.journey-item.clickable {
+  cursor: pointer;
+  position: relative;
+}
+
+.journey-item.clickable:hover {
+  transform: translateY(-8px) scale(1.08);
+  box-shadow:
+    0 15px 35px rgba(255, 107, 157, 0.4),
+    0 0 20px rgba(199, 125, 255, 0.3);
+}
+
+.journey-item.clickable:active {
+  transform: translateY(-3px) scale(1.02);
+}
+
+.journey-click-hint {
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+  margin-left: 5px;
+}
+
+.journey-item.clickable:hover .journey-click-hint {
+  opacity: 1;
+  animation: hintBounce 0.6s ease-in-out infinite;
+}
+
+@keyframes hintBounce {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: overlayFadeIn 0.3s ease-out;
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Content */
+.modal-content {
+  background: linear-gradient(145deg, #ffffff 0%, #fff5f7 50%, #ffeef3 100%);
+  border-radius: 30px;
+  padding: 35px 40px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow:
+    0 25px 80px rgba(255, 107, 157, 0.4),
+    0 0 0 5px rgba(255, 107, 157, 0.1),
+    inset 0 0 50px rgba(255, 255, 255, 0.8);
+  animation: modalSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.7) translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Modal Close Button */
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: linear-gradient(135deg, #ff6b9d 0%, #ff4d6d 100%);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+  line-height: 1;
+}
+
+.modal-close:hover {
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 8px 25px rgba(255, 77, 109, 0.5);
+}
+
+/* Modal Header */
+.modal-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.modal-emoji {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 10px;
+  animation: modalEmojiPop 0.5s ease-out 0.3s both;
+}
+
+@keyframes modalEmojiPop {
+  from {
+    transform: scale(0) rotate(-180deg);
+  }
+
+  to {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.modal-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  background: linear-gradient(135deg, var(--primary-pink) 0%, var(--accent-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.modal-date {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 15px;
+  background: linear-gradient(135deg, rgba(255, 107, 157, 0.2) 0%, rgba(199, 125, 255, 0.2) 100%);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #888;
+  font-weight: 500;
+}
+
+/* Modal Image Container */
+.modal-image-container {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow:
+    0 15px 40px rgba(255, 107, 157, 0.3),
+    0 0 0 4px rgba(255, 107, 157, 0.2);
+}
+
+.modal-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.modal-image-container:hover .modal-image {
+  transform: scale(1.05);
+}
+
+/* Modal Image Hearts */
+.modal-image-hearts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.modal-heart {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0;
+  animation: modalHeartFloat 3s ease-in-out infinite;
+}
+
+.modal-heart:nth-child(1) {
+  left: 10%;
+  top: 20%;
+}
+
+.modal-heart:nth-child(2) {
+  left: 80%;
+  top: 30%;
+}
+
+.modal-heart:nth-child(3) {
+  left: 20%;
+  top: 70%;
+}
+
+.modal-heart:nth-child(4) {
+  left: 70%;
+  top: 80%;
+}
+
+.modal-heart:nth-child(5) {
+  left: 50%;
+  top: 50%;
+}
+
+@keyframes modalHeartFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.5);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.5);
+  }
+}
+
+/* Modal Caption */
+.modal-caption {
+  font-size: 1.1rem;
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  margin: 15px 0;
+  padding: 15px;
+  background: rgba(255, 107, 157, 0.05);
+  border-radius: 15px;
+  border-left: 4px solid var(--primary-pink);
+}
+
+/* Modal Footer */
+.modal-footer {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid rgba(255, 107, 157, 0.1);
+}
+
+.modal-love {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+  color: var(--secondary-pink);
+  animation: modalLovePulse 2s ease-in-out infinite;
+}
+
+@keyframes modalLovePulse {
+
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+/* Modal responsive */
+@media (max-width: 600px) {
+  .modal-content {
+    padding: 25px 20px;
+    border-radius: 25px;
+  }
+
+  .modal-title {
+    font-size: 1.6rem;
+  }
+
+  .modal-emoji {
+    font-size: 2.5rem;
+  }
+
+  .modal-image {
+    height: 220px;
+  }
+
+  .modal-caption {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .modal-close {
+    width: 35px;
+    height: 35px;
+    font-size: 1.5rem;
+    top: 10px;
+    right: 15px;
+  }
+}
