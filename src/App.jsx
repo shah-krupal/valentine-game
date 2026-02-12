@@ -20,7 +20,7 @@ const IMAGES = {
 // Journey milestone images - Replace with your actual photos!
 const JOURNEY_IMAGES = {
   dayWeMet: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=600&fit=crop',
-  firstConvo: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=600&fit=crop',
+  firstMeetup: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=600&fit=crop',
   firstDate: 'https://images.unsplash.com/photo-1511306404404-ad607bd7c601?w=600&h=600&fit=crop',
   knewYouWereTheOne: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=600&h=600&fit=crop',
   oneYear: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&h=600&fit=crop',
@@ -31,33 +31,33 @@ const JOURNEY_IMAGES = {
 const STAGES = [
   {
     question: "Muskan, will you be my Valentine? 💕",
-    subMessage: "One year of us... and this question still gives me butterflies 🦋",
+    subMessage: "More than one year of us... and this question still gives me butterflies 🦋",
     yesText: "Yes! 💖",
     noText: "No",
   },
   {
     question: "Really, Muskan?! After everything?! 😢",
-    subMessage: "Remember our first date? You can't say no to THAT memory!",
-    yesText: "Okay, Yes! 💗",
+    subMessage: "Remember our first date? You can't say no to that memory on Christmas Day!",
+    yesText: "Okay, Thik hai! 💗",
     noText: "Still No",
   },
   {
-    question: "Muskan pleaseee? 🥺👉👈",
-    subMessage: "I'll replay all our favorite songs on loop... ALL OF THEM! 🎵",
+    question: "Muskan ji pleaseee? 🥺👉👈",
+    subMessage: "I'll start listening all 90s songs, your favourites!! 🎵",
     yesText: "Fine, YES! 💝",
     noText: "Nope",
   },
   {
-    question: "1 year of loving you wasn't enough?! 🤗",
-    subMessage: "I promise more cuddles, more dates, more 'us' moments! 💫",
+    question: "Muskan, 1 year of loving you wasn't enough?!🥺",
+    subMessage: "I promise more cuddles, more dates, more 'usss' moments! 💫",
     yesText: "YESSS! 💘",
     noText: "No way",
   },
   {
     question: "Muskan... this is your last chance! 😭💔",
-    subMessage: "The 'No' button gave up... just like I'll NEVER give up on us!",
-    yesText: "YES FOREVER! 💞",
-    noText: "...",
+    subMessage: "The 'No' button gave up... but I'll NEVER give up on us!",
+    yesText: "YESSSSS FOREVER! 💞",
+    noText: "Not allowed only"
   },
 ]
 
@@ -68,42 +68,42 @@ const JOURNEY_MOMENTS = [
     emoji: "✨",
     text: "The day we met",
     caption: "Where it all began... ✨",
-    date: "" // Add your date here like "December 2024"
+    date: "3 Nov" // Add your date here like "December 2024"
   },
   {
-    id: 'firstConvo',
+    id: 'firstMeetup',
     emoji: "💬",
-    text: "Our first conversation",
-    caption: "When I couldn't stop smiling at my phone 📱",
-    date: ""
+    text: "Our first meeting aise proper proper",
+    caption: "We hugged and sat in Gurudwara",
+    date: "16 Jan"
   },
   {
-    id: 'firstDate',
-    emoji: "☕",
-    text: "Our first date",
-    caption: "Nervous but so worth it! 💕",
-    date: ""
+    id: 'oneYear',
+    emoji: "🎉",
+    text: "Words matching actions",
+    caption: "Finally my words started matching my actions 🎊",
+    date: "14 July"
   },
   {
     id: 'knewYouWereTheOne',
     emoji: "💕",
     text: "When I knew you were the one",
     caption: "My heart just knew... 💖",
-    date: ""
+    date: "14 July"
   },
   {
-    id: 'oneYear',
-    emoji: "🎉",
-    text: "1 Year of Us",
-    caption: "365 days of loving you! 🎊",
-    date: ""
+    id: 'firstDate',
+    emoji: "☕",
+    text: "Our first date",
+    caption: "Nervous but so worth it! 💕",
+    date: "25 Dec"
   },
   {
     id: 'forever',
     emoji: "💍",
     text: "Forever to go...",
     caption: "This is just the beginning, Muskan 💞",
-    date: ""
+    date: "very soon!"
   },
 ]
 
@@ -174,7 +174,7 @@ function App() {
         left: Math.random() * 100,
         delay: Math.random() * 8,
         duration: 6 + Math.random() * 4,
-        size: 15 + Math.random() * 20,
+        size: 30 + Math.random() * 20,
       })
     }
     return hearts
@@ -446,7 +446,7 @@ function App() {
           {stage < 5 && (
             <button
               ref={noButtonRef}
-              className={`btn-no ${stage >= 2 ? 'running' : ''}`}
+              className={`btn-no ${stage >= 4 ? 'running' : ''}`}
               onClick={handleNoClick}
               onMouseEnter={handleNoMouseEnter}
               onTouchStart={(e) => {
