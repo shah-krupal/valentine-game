@@ -4,27 +4,27 @@ import './App.css'
 // Update these paths once you've added your photos to public/assets/images/
 const IMAGES = {
   // Initial question image (you/her/both)
-  stage0: 'assets/images/stage0.jpg',
+  stage0: '/valentine-game/assets/images/stage0.jpg',
   // After 1st No (goofy reaction)
-  stage1: 'assets/images/stage1.jpg',
+  stage1: '/valentine-game/assets/images/stage1.jpg',
   // After 2nd No (more pleading)
-  stage2: 'assets/images/stage2.jpg',
+  stage2: '/valentine-game/assets/images/stage2.jpg',
   // After 3rd No (dramatic)
-  stage3: 'assets/images/stage3.jpg',
+  stage3: '/valentine-game/assets/images/stage3.jpg',
   // After 4th No (final attempt)
-  stage4: 'assets/images/stage4.jpg',
+  stage4: '/valentine-game/assets/images/stage4.jpg',
   // Success screen (happy celebration)
-  success: 'assets/images/success.jpg',
+  success: '/valentine-game/assets/images/success.jpg',
 }
 
 // Journey milestone images
 const JOURNEY_IMAGES = {
-  dayWeMet: 'assets/images/dayWeMet.jpeg',
-  firstMeetup: 'assets/images/firstMeetup.jpeg',
-  firstDate: 'assets/images/firstDate.jpeg',
-  knewYouWereTheOne: 'assets/images/knewYouWereTheOne.jpeg',
-  oneYear: 'assets/images/oneYear.jpeg',
-  forever: 'assets/images/forever.jpeg',
+  dayWeMet: '/valentine-game/assets/images/dayWeMet.jpeg',
+  firstMeetup: '/valentine-game/assets/images/firstMeetup.jpeg',
+  firstDate: '/valentine-game/assets/images/firstDate.jpeg',
+  knewYouWereTheOne: '/valentine-game/assets/images/knewYouWereTheOne.jpeg',
+  oneYear: '/valentine-game/assets/images/oneYear.jpeg',
+  forever: '/valentine-game/assets/images/forever.jpeg',
 }
 
 
