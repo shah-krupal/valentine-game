@@ -321,15 +321,6 @@ body {
   animation: yesButtonGrow 0.5s ease-out;
 }
 
-.btn-yes::before {
-  content: '💕';
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.2rem;
-  pointer-events: none;
-}
 
 .btn-yes:hover {
   transform: scale(1.1);
