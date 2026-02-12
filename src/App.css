@@ -414,7 +414,7 @@
   }
 
   .journey-item {
-    width: 80%;
+    width: 90%;
     justify-content: center;
   }
 
@@ -423,51 +423,66 @@
   }
 
   .love-note p {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .journey-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .special-header {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .buttons-container {
+    gap: 12px;
   }
 }
 
 @media (max-width: 480px) {
+  .card {
+    padding: 30px 20px;
+  }
+
   .question-text {
-    font-size: 1.8rem !important;
+    font-size: 1.6rem !important;
+    margin-bottom: 10px;
   }
 
   .sub-message {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
+    margin-bottom: 25px;
   }
 
   .btn-yes {
-    padding: 12px 30px !important;
-    font-size: 1.1rem !important;
+    padding: 10px 25px !important;
+    font-size: 1rem !important;
+  }
+
+  .btn-no {
+    padding: 10px 25px !important;
+    font-size: 0.9rem !important;
   }
 
   .success-title {
-    font-size: 2rem !important;
+    font-size: 1.8rem !important;
   }
 
   .success-message {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .success-photo {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
   }
 
   .time-badge {
-    padding: 6px 15px;
+    padding: 5px 12px;
   }
 
   .badge-text {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 }
 

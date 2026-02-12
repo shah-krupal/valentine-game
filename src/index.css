@@ -17,7 +17,8 @@
   --shadow-glow: 0 0 60px rgba(255, 107, 157, 0.4);
 }
 
-html, body {
+html,
+body {
   height: 100%;
   overflow: hidden;
 }
@@ -66,12 +67,15 @@ body {
     transform: translateY(100vh) rotate(0deg) scale(0.5);
     opacity: 0;
   }
+
   10% {
     opacity: 0.6;
   }
+
   90% {
     opacity: 0.6;
   }
+
   100% {
     transform: translateY(-100vh) rotate(720deg) scale(1);
     opacity: 0;
@@ -90,10 +94,13 @@ body {
 }
 
 @keyframes sparkle {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0;
     transform: scale(0);
   }
+
   50% {
     opacity: 1;
     transform: scale(1);
@@ -118,6 +125,7 @@ body {
     opacity: 0;
     transform: translateY(50px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -130,7 +138,7 @@ body {
   backdrop-filter: blur(20px);
   border-radius: 30px;
   padding: 50px 60px;
-  box-shadow: 
+  box-shadow:
     0 25px 80px rgba(0, 0, 0, 0.15),
     0 0 100px rgba(255, 107, 157, 0.3),
     inset 0 0 40px rgba(255, 255, 255, 0.5);
@@ -148,12 +156,10 @@ body {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(
-    45deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
+  background: linear-gradient(45deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent);
   animation: shimmer 3s infinite;
 }
 
@@ -161,19 +167,23 @@ body {
   0% {
     transform: translateX(-100%) rotate(45deg);
   }
+
   100% {
     transform: translateX(100%) rotate(45deg);
   }
 }
 
 @keyframes cardPulse {
-  0%, 100% {
-    box-shadow: 
+
+  0%,
+  100% {
+    box-shadow:
       0 25px 80px rgba(0, 0, 0, 0.15),
       0 0 100px rgba(255, 107, 157, 0.3);
   }
+
   50% {
-    box-shadow: 
+    box-shadow:
       0 25px 80px rgba(0, 0, 0, 0.2),
       0 0 120px rgba(255, 107, 157, 0.5);
   }
@@ -187,7 +197,7 @@ body {
   overflow: hidden;
   margin: 0 auto 30px;
   border: 5px solid var(--primary-pink);
-  box-shadow: 
+  box-shadow:
     0 0 30px rgba(255, 107, 157, 0.5),
     0 15px 40px rgba(0, 0, 0, 0.2);
   position: relative;
@@ -206,9 +216,12 @@ body {
 }
 
 @keyframes photoFloat {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -234,6 +247,7 @@ body {
   from {
     transform: rotate(0deg) translateX(120px) rotate(0deg);
   }
+
   to {
     transform: rotate(360deg) translateX(120px) rotate(-360deg);
   }
@@ -252,9 +266,12 @@ body {
 }
 
 @keyframes questionPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.02);
   }
@@ -283,6 +300,9 @@ body {
 
 /* Yes Button */
 .btn-yes {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   background: linear-gradient(135deg, #ff6b9d 0%, #ff4d6d 100%);
   color: white;
   border: none;
@@ -293,7 +313,7 @@ body {
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 
+  box-shadow:
     0 10px 30px rgba(255, 77, 109, 0.4),
     0 0 20px rgba(255, 107, 157, 0.3);
   position: relative;
@@ -304,15 +324,16 @@ body {
 .btn-yes::before {
   content: '💕';
   position: absolute;
-  left: 15px;
+  left: 20px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 1.2rem;
+  pointer-events: none;
 }
 
 .btn-yes:hover {
   transform: scale(1.1);
-  box-shadow: 
+  box-shadow:
     0 15px 40px rgba(255, 77, 109, 0.5),
     0 0 40px rgba(255, 107, 157, 0.5);
 }
@@ -326,6 +347,7 @@ body {
     transform: scale(0.8);
     opacity: 0;
   }
+
   to {
     transform: scale(1);
     opacity: 1;
@@ -334,6 +356,9 @@ body {
 
 /* No Button */
 .btn-no {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   background: linear-gradient(135deg, #adb5bd 0%, #868e96 100%);
   color: white;
   border: none;
@@ -386,6 +411,7 @@ body {
     opacity: 0;
     transform: scale(0.8);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -398,7 +424,7 @@ body {
   border-radius: 30px;
   padding: 60px 80px;
   text-align: center;
-  box-shadow: 
+  box-shadow:
     0 30px 100px rgba(0, 0, 0, 0.2),
     0 0 150px rgba(255, 107, 157, 0.4);
   max-width: 600px;
@@ -411,9 +437,11 @@ body {
     transform: scale(0.5) translateY(50px);
     opacity: 0;
   }
+
   60% {
     transform: scale(1.1) translateY(-10px);
   }
+
   100% {
     transform: scale(1) translateY(0);
     opacity: 1;
@@ -427,15 +455,20 @@ body {
 }
 
 @keyframes heartBeat {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
   }
+
   25% {
     transform: scale(1.1);
   }
+
   50% {
     transform: scale(1);
   }
+
   75% {
     transform: scale(1.15);
   }
@@ -496,6 +529,7 @@ body {
     transform: translateY(-100px) rotate(0deg);
     opacity: 1;
   }
+
   100% {
     transform: translateY(100vh) rotate(720deg);
     opacity: 0;
@@ -529,30 +563,30 @@ body {
   .card {
     padding: 35px 25px;
   }
-  
+
   .question-text {
     font-size: 2rem;
   }
-  
+
   .photo-container {
     width: 150px;
     height: 150px;
   }
-  
+
   .buttons-container {
     flex-direction: column;
     gap: 15px;
   }
-  
+
   .btn-yes {
     padding: 15px 40px;
     font-size: 1.2rem;
   }
-  
+
   .success-content {
     padding: 40px 30px;
   }
-  
+
   .success-title {
     font-size: 2.5rem;
   }
