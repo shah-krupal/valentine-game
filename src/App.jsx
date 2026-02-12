@@ -1,31 +1,32 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import './App.css'
 
-// Placeholder images - Replace these with your actual Google Drive links
+// Update these paths once you've added your photos to public/assets/images/
 const IMAGES = {
   // Initial question image (you/her/both)
-  stage0: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=400&h=400&fit=crop',
+  stage0: 'assets/images/stage0.jpg',
   // After 1st No (goofy reaction)
-  stage1: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400&h=400&fit=crop',
+  stage1: 'assets/images/stage1.jpg',
   // After 2nd No (more pleading)
-  stage2: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=400&h=400&fit=crop',
+  stage2: 'assets/images/stage2.jpg',
   // After 3rd No (dramatic)
-  stage3: 'https://images.unsplash.com/photo-1523438885200-e635ba2c371e?w=400&h=400&fit=crop',
+  stage3: 'assets/images/stage3.jpg',
   // After 4th No (final attempt)
-  stage4: 'https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=400&h=400&fit=crop',
+  stage4: 'assets/images/stage4.jpg',
   // Success screen (happy celebration)
-  success: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=400&h=400&fit=crop',
+  success: 'assets/images/success.jpg',
 }
 
-// Journey milestone images - Replace with your actual photos!
+// Journey milestone images
 const JOURNEY_IMAGES = {
-  dayWeMet: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=600&fit=crop',
-  firstMeetup: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=600&fit=crop',
-  firstDate: 'https://images.unsplash.com/photo-1511306404404-ad607bd7c601?w=600&h=600&fit=crop',
-  knewYouWereTheOne: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=600&h=600&fit=crop',
-  oneYear: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&h=600&fit=crop',
-  forever: 'https://images.unsplash.com/photo-1516589091380-5d8e87df6999?w=600&h=600&fit=crop',
+  dayWeMet: 'assets/images/dayWeMet.jpeg',
+  firstMeetup: 'assets/images/firstMeetup.jpeg',
+  firstDate: 'assets/images/firstDate.jpeg',
+  knewYouWereTheOne: 'assets/images/knewYouWereTheOne.jpeg',
+  oneYear: 'assets/images/oneYear.jpeg',
+  forever: 'assets/images/forever.jpeg',
 }
+
 
 // Personalized messages for Muskan
 const STAGES = [
@@ -89,7 +90,7 @@ const JOURNEY_MOMENTS = [
     emoji: "💕",
     text: "When I knew you were the one",
     caption: "My heart just knew... 💖",
-    date: "14 July"
+    date: "18 May"
   },
   {
     id: 'firstDate',
@@ -198,13 +199,10 @@ function App() {
   const handleNoClick = () => {
     if (stage < 4) {
       setStage(prev => prev + 1)
-      setYesBtnScale(prev => prev + 0.15)
-
-      if (stage >= 1) {
-        moveNoButton()
-      }
+      setYesBtnScale(prev => prev + 0.2) // Make the Yes button grow even bigger!
     } else {
-      setNoButtonStyle({ display: 'none' })
+      // In the very last stage, it just keeps running away forever
+      moveNoButton()
     }
   }
 
@@ -229,7 +227,8 @@ function App() {
 
   // Handle mouse approaching No button
   const handleNoMouseEnter = () => {
-    if (stage >= 2) {
+    // Only make it run away in the very last stage (stage 4)
+    if (stage === 4) {
       moveNoButton()
     }
   }
@@ -249,7 +248,7 @@ function App() {
   const createConfetti = () => {
     const confetti = []
     const colors = ['#ff6b9d', '#ff4d6d', '#c77dff', '#ffd700', '#ff9a9e', '#fff']
-    const shapes = ['💕', '💖', '💗', '❤️', '✨', '🌟', '💘', 'M', '❤️']
+    const shapes = ['💕', '💖', '💗', '❤️', '✨', '🌟', '💘', '❤️']
 
     for (let i = 0; i < 100; i++) {
       confetti.push({
@@ -450,7 +449,7 @@ function App() {
               onClick={handleNoClick}
               onMouseEnter={handleNoMouseEnter}
               onTouchStart={(e) => {
-                if (stage >= 2) {
+                if (stage === 4) {
                   e.preventDefault();
                   moveNoButton();
                 }
