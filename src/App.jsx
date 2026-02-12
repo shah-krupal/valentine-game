@@ -167,7 +167,7 @@ function App() {
   // Create floating hearts
   const createFloatingHearts = useCallback(() => {
     const hearts = []
-    const heartEmojis = ['💕', '💗', '💖', '💝', '💘', '❤️', '💓', '💞', '🌹', '✨', 'M', '❤️']
+    const heartEmojis = ['💕', '💗', '💖', '💝', '💘', '❤️', '💓', '💞', '🌹', '✨', '❤️']
     for (let i = 0; i < 30; i++) {
       hearts.push({
         id: i,
